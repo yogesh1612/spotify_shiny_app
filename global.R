@@ -20,9 +20,20 @@ get_artists <- function(artist_name, token) {
   return(NULL)
 }
 
+# get_url <- function(x){
+#   paste0(
+#     "<a href='",
+#    x,
+#     "' target='_blank'>",
+#     "'",
+#     x,
+#     "'</a>"
+#   )
+# }
 
 get_data <- function(df,type){
   if(type=="album"){
+  #  df$external_urls.spotify <- get_url(df$external_urls.spotify)
     return(df[,c('album_type','name','release_date','total_tracks','external_urls.spotify')])
   }else if(type=="artist"){
     return(df[,c("name","popularity","type","external_urls.spotify","followers.total")])

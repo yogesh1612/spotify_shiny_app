@@ -3,6 +3,9 @@ library("shinyWidgets")
 library('httr')
 library('DT')
 library("markdown")
+library('spotifyr')
+library('dplyr')
+
 useSweetAlert()
 
 shinyUI(fluidPage(
@@ -21,7 +24,14 @@ shinyUI(fluidPage(
                      selectInput("sel_type","Select Type",choices = c("album", "artist", "playlist", "track")),
                      actionButton("search","Search"),
                      downloadButton("download")
-                    )
+                    ),
+    conditionalPanel(condition = "input.conditionedPanels== 'Get Audio Features'",
+                     textInput("ser_art_2","Artist Name"),
+                     actionButton("act_btn2","Search"),
+                     uiOutput('select_artist_ui'),
+                     uiOutput('b2'),
+                    
+                     )
     ),
   
   mainPanel(
@@ -40,6 +50,8 @@ shinyUI(fluidPage(
                          DT::dataTableOutput("ser_data")
                          
                          ),
+                tabPanel("Get Audio Features",
+                         DT::dataTableOutput('find_audio')),
                 id = "conditionedPanels"  
                 )
                 
