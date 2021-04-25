@@ -7,5 +7,7 @@ if(!require(DT)) {install.packages("DT")};library("DT")
 if(!require(markdown)) {install.packages("markdown")};library("markdown")
 if(!require(highcharter)) {install.packages("highcharter")};library("highcharter")
 if(!require(shinycssloaders)) {install.packages("shinycssloaders")};library("shinycssloaders")
+if(!require(shinyjs)) {install.packages("shinyjs")};library("shinyjs")
+
 if(!require(devtools)) {install.packages("devtools")};library("devtools")
 if(!require(spotifyr)) {devtools::install_github('charlie86/spotifyr')};library("spotifyr")
