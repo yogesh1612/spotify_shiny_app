@@ -5,6 +5,8 @@ library('DT')
 library("markdown")
 library('spotifyr')
 library('dplyr')
+library("highcharter")
+library("shinycssloaders")
 
 useSweetAlert()
 
@@ -30,7 +32,7 @@ shinyUI(fluidPage(
                      actionButton("act_btn2","Search"),
                      uiOutput('select_artist_ui'),
                      uiOutput('b2'),
-                    
+                     
                      )
     ),
   
@@ -51,6 +53,9 @@ shinyUI(fluidPage(
                          
                          ),
                 tabPanel("Get Audio Features",
+                         hr(),
+                         uiOutput('artist_plot'),
+                         downloadButton("download_audio_feature"),
                          DT::dataTableOutput('find_audio')),
                 id = "conditionedPanels"  
                 )
