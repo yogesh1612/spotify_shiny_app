@@ -8,6 +8,7 @@ if(!require(markdown)) {install.packages("markdown")};library("markdown")
 if(!require(highcharter)) {install.packages("highcharter")};library("highcharter")
 if(!require(shinycssloaders)) {install.packages("shinycssloaders")};library("shinycssloaders")
 if(!require(shinyjs)) {install.packages("shinyjs")};library("shinyjs")
-
+if(!require(shinyBS)) {install.packages("shinyBS")};library("shinyBS")
+if(!require(shinymaterial)) {install.packages("shinymaterial")};library("shinymaterial")
 if(!require(devtools)) {install.packages("devtools")};library("devtools")
 if(!require(spotifyr)) {devtools::install_github('charlie86/spotifyr')};library("spotifyr")
